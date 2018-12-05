@@ -12,6 +12,8 @@
         <ui>
             <li v-for="item in list" v-bind:key="item.id">
                 ID.{{ item.id }} {{ item.name }} HP.{{ item.hp }}
+                <!-- 削除ボタンをv-for内に追加 -->
+                <button v-on:click="doRemove(index)">モンスターを削除</button>
             </li>
         </ui>
     </div>

@@ -9,15 +9,19 @@ new Vue({
         ]
     },
     methods: {
-        doAdd: function() {
+        doAdd () {
             var max = this.list.reduce( function(a, b) {
                 return a > b.id ? a : b.id 
             },0)
+
             this.list.push({
                 id: max + 1,
                 name: this.name,
                 hp: 500
-            }) 
+            })
+        },
+        doRemove: function (index) {
+            this.list.splice(index, 1)
         }
     }
 })
